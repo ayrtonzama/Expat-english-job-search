@@ -5,7 +5,7 @@ import "./login-page.scss";
 export default function LoginPage() {
     return (
         <div className="flex">
-            <div className="left m-auto max-h-full min-h-full w-1/2">
+            <div className=" m-auto max-h-full min-h-full justify-center">
                 <div className="p-10">
                     <header className="login-hero">
                         <p className="login-hero__eyebrow">Welcome back</p>
@@ -20,9 +20,7 @@ export default function LoginPage() {
                     <LoginForm />
                 </div>
             </div>
-            <div className="right bg-gray-800 w-1/2  h-screen">
-
-            </div>
+            
         </div>
     )
 }
