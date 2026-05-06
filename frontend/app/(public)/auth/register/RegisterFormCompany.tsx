@@ -12,7 +12,7 @@ type Role = {
     value: boolean
     title: string
     subtitle: string
-    icon: React.ReactNode
+
 }
 
 const ROLES: Role[] = [
@@ -20,23 +20,13 @@ const ROLES: Role[] = [
         value: false,
         title: "Job seeker",
         subtitle: "Looking for work abroad",
-        icon: (
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
-            </svg>
-        ),
+        
     },
     {
         value: true,
         title: "Employer / HR",
         subtitle: "Hiring international talent",
-        icon: (
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <rect x="3" y="7" width="18" height="13" rx="2" />
-                <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-            </svg>
-        ),
+      
     },
 ]
 
@@ -99,7 +89,7 @@ export function RegisterFormCompany() {
                                     checked={selected}
                                     onChange={() => setValue('isOrg', role.value, { shouldValidate: true })}
                                 />
-                                <span className="role-card__icon" aria-hidden="true">{role.icon}</span>
+                               
                                 <span className="role-card__dot" aria-hidden="true" />
                                 <span className="role-card__title">{role.title}</span>
                                 <span className="role-card__subtitle">{role.subtitle}</span>

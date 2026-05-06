@@ -1,0 +1,108 @@
+.authed-shell {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+    background: $paper;
+}
+
+.authed-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 16px;
+    background: $card;
+    border-right: 1px solid $line;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.authed-sidebar__brand {
+    display: inline-flex;
+    align-items: center;
+    color: $ink;
+    padding: 4px 8px;
+}
+
+.authed-sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.authed-sidebar__link {
+    display: block;
+    padding: 10px 12px;
+    border-radius: $r-2;
+    font-family: $font-sans;
+    font-size: 14px;
+    font-weight: 500;
+    color: $ink-2;
+    text-decoration: none;
+    transition: background-color 120ms ease, color 120ms ease;
+
+    &:hover {
+        background: $paper-2;
+        color: $ink;
+    }
+}
+
+.authed-sidebar__link--active {
+    background: $accent-soft;
+    color: $accent;
+}
+
+.authed-sidebar__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid $line;
+}
+
+.authed-sidebar__user {
+    font-family: $font-sans;
+    font-size: 13px;
+    color: $ink-3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.authed-main {
+    padding: 32px 40px;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .authed-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .authed-sidebar {
+        position: static;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid $line;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+
+    .authed-sidebar__nav {
+        flex-direction: row;
+        flex: 1;
+        overflow-x: auto;
+    }
+
+    .authed-sidebar__footer {
+        flex-direction: row;
+        align-items: center;
+        border-top: 0;
+        padding: 0;
+    }
+}
