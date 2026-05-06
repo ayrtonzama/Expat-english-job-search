@@ -1,0 +1,59 @@
+.login-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 560px;
+}
+
+.login-hero__eyebrow {
+    margin: 0;
+    font-family: $font-sans;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $ink-3;
+}
+
+.login-hero__title {
+    margin: 0;
+    font-family: $font-display;
+    font-weight: 500;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: $ink;
+}
+
+.login-hero__title-accent {
+    font-style: italic;
+    color: $accent;
+}
+
+.login-hero__meta {
+    margin: 6px 0 0;
+    font-family: $font-sans;
+    font-size: 15px;
+    color: $ink-2;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.login-hero__link {
+    color: $ink;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &::after {
+        content: " \2192";
+        display: inline-block;
+        margin-left: 2px;
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $accent;
+    }
+}

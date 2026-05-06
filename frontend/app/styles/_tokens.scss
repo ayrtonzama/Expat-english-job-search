@@ -1,0 +1,59 @@
+// English Job Finder — design tokens (Sass variables only)
+// =====================================================================
+// Compile-time tokens. Imported into every .module.scss via
+// next.config.ts `sassOptions.additionalData`, so any module can use
+// `$accent`, `$paper`, etc. without an explicit @use.
+//
+// Runtime CSS custom properties (:root { --paper: … }) live in
+// globals.scss so they are emitted exactly once.
+// =====================================================================
+
+// ── Surfaces ─────────────────────────────────────────────────────────
+$paper:        #F7F3ED;
+$paper-2:      #EFE8DC;
+$card:         #FFFFFF;
+$ink:          #1B1612;
+$ink-2:        #3A332B;
+$ink-3:        #6B6358;
+$ink-4:        #9A9085;
+$line:         #E4DDCF;
+$line-strong:  #C9BFAB;
+
+// ── Accent (overridden by Tweaks) ────────────────────────────────────
+$accent:       #E5552B;
+$accent-ink:   #FFFFFF;
+$accent-soft:  #FBE4D5;
+
+// ── Supporting ───────────────────────────────────────────────────────
+$sage:         #5D6E55;
+$sage-soft:    #DDE2D2;
+$clay:         #B7572E;
+$plum:         #5B3B5C;
+$gold:         #C99A2E;
+
+// ── Status ───────────────────────────────────────────────────────────
+$ok:           #2F7A52;
+$ok-soft:      #DCEBDF;
+$warn:         #C97A1F;
+$warn-soft:    #F7E3CB;
+$bad:          #B7372E;
+$bad-soft:     #F4D8D2;
+$info:         #2F5BEA;
+$info-soft:    #D9E2FA;
+
+// ── Type ─────────────────────────────────────────────────────────────
+$font-display: "Fraunces", "Source Serif Pro", Georgia, serif;
+$font-sans:    "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+// ── Radii ────────────────────────────────────────────────────────────
+$r-1:          4px;
+$r-2:          8px;
+$r-3:          12px;
+$r-4:          18px;
+$r-pill:       999px;
+
+// ── Shadows ──────────────────────────────────────────────────────────
+$shadow-1: 0 1px 0 rgba(27, 22, 18, 0.04), 0 1px 2px rgba(27, 22, 18, 0.04);
+$shadow-2: 0 1px 2px rgba(27, 22, 18, 0.05), 0 6px 16px rgba(27, 22, 18, 0.06);
+$shadow-3: 0 10px 30px rgba(27, 22, 18, 0.10), 0 2px 6px rgba(27, 22, 18, 0.06);

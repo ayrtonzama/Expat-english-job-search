@@ -1,0 +1,23 @@
+.brand{
+
+    &__brand-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    &__logo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        background: var(--accent);
+        color: var(--accent-ink);
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1;
+    }
+}

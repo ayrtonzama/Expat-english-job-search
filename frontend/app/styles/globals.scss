@@ -1,0 +1,235 @@
+@use "tokens" as *;
+
+// Mirror Sass tokens to CSS custom properties so the Tweaks panel
+// can override them at runtime without recompiling.
+:root {
+  --paper:        #{$paper};
+  --paper-2:      #{$paper-2};
+  --card:         #{$card};
+  --ink:          #{$ink};
+  --ink-2:        #{$ink-2};
+  --ink-3:        #{$ink-3};
+  --ink-4:        #{$ink-4};
+  --line:         #{$line};
+  --line-strong: #{$line-strong};
+
+  --accent:       #{$accent};
+  --accent-ink:  #{$accent-ink};
+  --accent-soft: #{$accent-soft};
+
+  --sage:        #{$sage};
+  --sage-soft:   #{$sage-soft};
+  --clay:        #{$clay};
+  --plum:        #{$plum};
+  --gold:        #{$gold};
+
+  --ok:          #{$ok};
+  --ok-soft:     #{$ok-soft};
+  --warn:        #{$warn};
+  --warn-soft:   #{$warn-soft};
+  --bad:         #{$bad};
+  --bad-soft:    #{$bad-soft};
+  --info:        #{$info};
+  --info-soft:   #{$info-soft};
+
+  --font-display: #{$font-display};
+  --font-sans:    #{$font-sans};
+  --font-mono:    #{$font-mono};
+
+  --r-1:    #{$r-1};
+  --r-2:    #{$r-2};
+  --r-3:    #{$r-3};
+  --r-4:    #{$r-4};
+  --r-pill: #{$r-pill};
+
+  --shadow-1: #{$shadow-1};
+  --shadow-2: #{$shadow-2};
+  --shadow-3: #{$shadow-3};
+}
+
+* { box-sizing: border-box; }
+
+body.eedw {
+  background-color: var(--paper-2);
+  color: var(--ink);
+}
+
+// ── App namespace ────────────────────────────────────────────────────
+.eedw {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .mono { font-family: var(--font-mono); }
+
+  button { font-family: inherit; }
+  input, textarea, select { font-family: inherit; color: inherit; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--r-pill);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+
+    &:active { transform: translateY(1px); }
+
+    &-primary {
+      background: var(--accent);
+      color: var(--accent-ink);
+      &:hover { filter: brightness(0.94); }
+    }
+    &-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong);
+      &:hover { background: var(--paper-2); }
+    }
+    &-ink {
+      background: var(--ink);
+      color: #fff;
+    }
+    &-sm { padding: 7px 12px; font-size: 13px; }
+    &-lg { padding: 14px 22px; font-size: 15px; }
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: var(--r-pill);
+    background: var(--paper-2);
+    color: var(--ink-2);
+    border: 1px solid var(--line);
+
+    &.dot::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    &-accent { background: var(--accent-soft); color: var(--clay); border-color: transparent; }
+    &-sage   { background: var(--sage-soft);   color: var(--sage); border-color: transparent; }
+    &-ok     { background: var(--ok-soft);     color: var(--ok);   border-color: transparent; }
+    &-warn   { background: var(--warn-soft);   color: var(--warn); border-color: transparent; }
+    &-info   { background: var(--info-soft);   color: var(--info); border-color: transparent; }
+  }
+
+  .input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-2);
+    background: var(--card);
+    font-size: 14px;
+    color: var(--ink);
+    transition: border-color 0.15s, box-shadow 0.15s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+  }
+
+  .label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .img-ph {
+    background: repeating-linear-gradient(
+      135deg,
+      var(--paper-2) 0 12px,
+      rgba(0, 0, 0, 0.02) 12px 14px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--r-3);
+  }
+
+  .flag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 16px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    background: var(--ink);
+    color: #fff;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+
+  .avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    background: var(--paper-2);
+    color: var(--ink);
+  }
+
+  .hr {
+    height: 1px;
+    background: var(--line);
+    border: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+
+    &-thumb {
+      background: var(--line-strong);
+      border-radius: 4px;
+    }
+    &-track {
+      background: transparent;
+    }
+  }
+}
