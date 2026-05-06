@@ -66,10 +66,30 @@
     font-weight: 500;
     color: $ink;
     text-decoration: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
 
     &:hover {
         color: $accent;
     }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: default;
+    }
+}
+
+.nav-header__user {
+    font-size: 14px;
+    font-weight: 500;
+    color: $ink-2;
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .nav-header__cta {

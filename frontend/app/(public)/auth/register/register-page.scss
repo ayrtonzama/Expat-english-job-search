@@ -1,0 +1,173 @@
+.register-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 560px;
+}
+
+.register-hero__eyebrow {
+    margin: 0;
+    font-family: $font-sans;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $ink-3;
+}
+
+.register-hero__title {
+    margin: 0;
+    font-family: $font-display;
+    font-weight: 500;
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: $ink;
+}
+
+.register-hero__title-accent {
+    font-style: italic;
+    color: $accent;
+}
+
+.register-hero__meta {
+    margin: 6px 0 0;
+    font-family: $font-sans;
+    font-size: 15px;
+    color: $ink-2;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.register-hero__link {
+    color: $ink;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &::after {
+        content: " \2192";
+        display: inline-block;
+        margin-left: 2px;
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    max-width: 560px;
+}
+
+.role-picker {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.role-picker__legend {
+    font-family: $font-sans;
+    font-size: 14px;
+    font-weight: 500;
+    color: $ink-2;
+    padding: 0;
+}
+
+.role-picker__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.role-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "icon . dot"
+        "title title title"
+        "sub sub sub";
+    row-gap: 4px;
+    column-gap: 10px;
+    padding: 14px 16px;
+    border: 1.5px solid $line;
+    border-radius: $r-3;
+    background: $card;
+    cursor: pointer;
+    transition: border-color 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+
+    &:hover {
+        border-color: $line-strong;
+    }
+
+    &:focus-within {
+        outline: 2px solid $accent;
+        outline-offset: 2px;
+    }
+}
+
+.role-card--selected {
+    background: $accent-soft;
+    border-color: $accent;
+}
+
+.role-card__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.role-card__icon {
+    grid-area: icon;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $ink-2;
+}
+
+.role-card__dot {
+    grid-area: dot;
+    align-self: start;
+    width: 18px;
+    height: 18px;
+    border-radius: $r-pill;
+    border: 1.5px solid $line-strong;
+    background: $card;
+    box-shadow: inset 0 0 0 4px $card;
+    transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+
+    .role-card--selected & {
+        background: $accent;
+        border-color: $accent;
+        box-shadow: inset 0 0 0 3px $card;
+    }
+}
+
+.role-card__title {
+    grid-area: title;
+    font-family: $font-sans;
+    font-size: 15px;
+    font-weight: 600;
+    color: $ink;
+    margin-top: 6px;
+}
+
+.role-card__subtitle {
+    grid-area: sub;
+    font-family: $font-sans;
+    font-size: 13px;
+    color: $ink-3;
+}
